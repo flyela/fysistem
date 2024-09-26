@@ -11,4 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export default class InicioComponent {
 
+
 }
+
+
