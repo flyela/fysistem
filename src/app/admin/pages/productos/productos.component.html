@@ -1,26 +1,53 @@
-
-<div class="grid gap-4">
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Nuestros Productos</h1>
+  
+    <!-- Search and Category Filter -->
+    <div class="mb-6 flex flex-col sm:flex-row gap-4">
+      <input 
+        type="text" 
+        [ngModel]="searchTerm()" 
+        (ngModelChange)="searchTerm.set($event)"
+        placeholder="Buscar productos..." 
+        class="p-2 border rounded-md flex-grow"
+      >
+      <select 
+        [ngModel]="selectedCategory()" 
+        (ngModelChange)="selectedCategory.set($event)"
+        class="p-2 border rounded-md"
+      >
+        <option value="all">Todas las categorías</option>
+        <option value="industrial">Industrial</option>
+        <option value="empresarial">Empresarial</option>
+        <option value="academico">Académico</option>
+        <option value="hogares">Hogares</option>
+      </select>
     </div>
-    <div class="grid grid-cols-5 gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+  
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div *ngFor="let product of filteredProducts()" 
+           class="border rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
+           [class.ring-2]="selectedProducts().includes(product.id)"
+           [class.ring-blue-500]="selectedProducts().includes(product.id)"
+           (click)="toggleProductSelection(product.id)">
+        <img [src]="product.imageUrl" [alt]="product.name" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2">{{ product.name }}</h3>
+          <p class="text-sm text-gray-600">Categoría: {{ product.category }}</p>
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-        </div>
+      </div>
     </div>
-</div> 
+  
+    <!-- Selected Products Summary 
+    <div *ngIf="selectedProducts().length > 0" class="mt-8 p-4 bg-gray-100 rounded-lg">
+      <h2 class="text-xl font-semibold mb-4">Productos Seleccionados</h2>
+      <ul>
+        <li *ngFor="let id of selectedProducts()">
+            {{ products().find(p => p.id === id)?.name || 'Producto no encontrado' }}
+          </li>
+      </ul>
+    </div>-->
+  </div>
 
 
-
+  

@@ -1,2 +1,48 @@
-<h1>Soy El contacto</h1>
-<h1>Juancho pinpiolo</h1>
+  <!-- Sección de Contacto -->
+  <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Título -->
+      <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-8">Contáctanos</h2>
+
+      <!-- Contenido -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Información de Contacto -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Información de Contacto</h3>
+          <p class="text-gray-600 mb-4">
+            Si tienes alguna duda o necesitas más información, no dudes en contactarnos a través de los siguientes medios:
+          </p>
+          <ul class="text-gray-600">
+            <li class="mb-2"><strong>Teléfono:</strong> +34 123 456 789</li>
+            <li class="mb-2"><strong>Email:</strong> info.tudominio.com</li>
+            <li class="mb-2"><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</li>
+          </ul>
+        </div>
+
+        <!-- Formulario de Contacto -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Envíanos un mensaje</h3>
+          <form action="#" method="POST" class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-700 font-medium">Nombre</label>
+              <input type="text" id="name" name="name" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+
+            <div>
+              <label for="email" class="block text-gray-700 font-medium">Email</label>
+              <input type="email" id="email" name="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+
+            <div>
+              <label for="message" class="block text-gray-700 font-medium">Mensaje</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="w-full bg-indigo-600 text-white p-2 rounded-lg shadow hover:bg-indigo-700 transition-colors duration-300">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
