@@ -32,8 +32,12 @@ export default class InicioComponent {
       alt: 'Imagen5'
     },
     {
-      src: 'https://i.blogs.es/3dedda/impresora-3d-barata-en-oferta-abycubic-ideal-para-regalar-reyes-magos/500_333.jpeg',
+      src: 'https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-close-up-of-a-functional-3d-printer-in-action-image_13599549.png',
       alt: 'Imagen6'
+    },
+     {
+      src: 'https://img.channelpartner.es/wp-content/uploads/2023/07/20113143/IMPRESION-3D-5.jpg.webp',
+      alt: 'Imagen7'
     }
   ];
 
