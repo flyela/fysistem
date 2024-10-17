@@ -1,4 +1,4 @@
-/* Add these styles if you haven't already included them via a Tailwind CSS setup */
+/* Add these styles if you haven't already included them via a Tailwind CSS setup */ 
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -12,3 +12,4 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+    

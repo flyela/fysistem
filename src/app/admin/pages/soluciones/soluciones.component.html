@@ -1,10 +1,10 @@
 <div class="bg-gray-100 min-h-screen">
-    <div class="bg-gray-800 py-8 sm:py-12">
+    <div class="rounded-xl bg-gray-800 py-8 sm:py-12">
       <h1 class="text-3xl sm:text-4xl font-bold text-center text-white">Noticias</h1>
     </div>
     <div class="container mx-auto px-4 py-6 sm:py-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <div *ngFor="let item of newsItems" class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+        <div *ngFor="let item of newsItems" class="bg-slate-200 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
           <img [src]="item.imageUrl" [alt]="item.title" class="w-full h-48 sm:h-56 object-cover">
           <div class="p-4">
             <h2 class="text-xl font-semibold mb-2 line-clamp-2">{{ item.title }}</h2>
