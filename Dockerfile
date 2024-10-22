@@ -1,13 +1,15 @@
-# Stage 0, based on Node.js, to build and compile Angular
-FROM node:20-alpine as build- 
-    RUN mkdir -p /app
+FROM node:18-alpine as dev-deps
 WORKDIR /app
-COPY ./ /app/
+COPY package.json package.json
 RUN npm install
-ARG configuration=production
-RUN npm run build -- --prod --configuration=$configuration
 
-# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-FROM nginx:alpine
-COPY --from=node /app/dist/docker-angular /usr/share/nginx/html
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+FROM node:18-alpine as builder
+WORKDIR /app
+COPY --from=dev-deps /app/node_modules ./node_modules
+COPY . .
+RUN npm run build
+
+FROM nginx:1.23.3 as prod
+EXPOSE 80
+COPY --from=builder /app/dist/fysistem /usr/share/nginx/html
+CMD [ "nginx","-g","daemon off;" ]
