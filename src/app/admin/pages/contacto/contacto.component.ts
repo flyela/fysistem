@@ -1,65 +1,28 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-
-interface ContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
-
-interface ContactInfo {
-  name: string;
-  email: string;
-  phone: string;
-  address: string;
-}
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule],
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class ContactoComponent {
-  contactForm = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    address: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    message: ['', [Validators.required, Validators.minLength(10)]]
-  });
+  phoneNumber = '+573128078694';
+  whatsappMessage = 'Hola, quiero más información sobre sus servicios.';
+  addressUrl = 'https://g.co/kgs/dtHqGzq';
 
-  isLoading = false;
-  isSubmitted = false;
+  get whatsappUrl(): string {
+    return `https://wa.me/${this.phoneNumber.replace('+', '')}?text=${encodeURIComponent(this.whatsappMessage)}`;
+  }
 
-  constructor(private fb: FormBuilder) {}
+  get phoneHref(): string {
+    return `tel:${this.phoneNumber}`;
+  }
 
-  onSubmit() {
-    if (this.contactForm.valid) {
-      this.isLoading = true;
-      const formValue = this.contactForm.value;
-      const message = encodeURIComponent(
-        `*Nuevo mensaje de contacto*\n\n` +
-        `*Nombre:* ${formValue.name}\n` +
-        `*Dirección:* ${formValue.address}\n` +
-        `*Email:* ${formValue.email}\n` +
-        `*Mensaje:* ${formValue.message}`
-      );
-
-      const whatsappUrl = `https://wa.me/573125831346?text=${message}`;
-      window.open(whatsappUrl, '_blank');
-
-      this.isLoading = false;
-      this.isSubmitted = true;
-      this.contactForm.reset();
-    } else {
-      Object.values(this.contactForm.controls).forEach(control => {
-        if (control.invalid) {
-          control.markAsTouched();
-        }
-      });
-    }
+  get mapsHref(): string {
+    return this.addressUrl;
   }
 }
