@@ -23,11 +23,31 @@ export default class ProductosComponent {
   public selectedCategory = signal('all');
 
   public products = signal<Product[]>([
-    { id: 1, name: 'Industrial Product 1', category: 'industrial', imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg' },
-    { id: 2, name: 'Empresarial Product 1', category: 'empresarial', imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg' },
-    { id: 3, name: 'Academico Product 1', category: 'academico', imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg' },
-    { id: 4, name: 'Hogares Product 1', category: 'hogares', imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg' },
-    { id: 5, name: 'Industrial Product 2', category: 'industrial', imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg' },
+    { 
+      id: 1,
+      name: 'Maqueta',
+      category: 'industrial',
+      imageUrl: './assets/Images/Maqueta1.jpeg' },
+
+    { id: 2,
+      name: 'Maqueta',
+      category: 'empresarial',
+      imageUrl: './assets/Images/Maqueta2.jpeg' },
+
+    { id: 3, 
+      name: 'Maqueta', 
+      category: 'academico', 
+      imageUrl: './assets/Images/Maqueta3.jpeg' },
+
+    { id: 4,
+      name: 'Maqueta',
+      category: 'hogares',
+      imageUrl: './assets/Images/Maqueta4.jpeg' },
+
+    { id: 5,
+      name: 'Maqueta',
+      category: 'industrial',
+      imageUrl: './assets/Images/Maqueta5.jpeg' },
   ]);
 
   public selectedProducts = signal<number[]>([]);

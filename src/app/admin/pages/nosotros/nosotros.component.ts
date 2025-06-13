@@ -1,14 +1,21 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component } from "@angular/core"
+import { CommonModule } from "@angular/common"
 
 @Component({
-  selector: 'app-nosotros',
+  selector: "app-nosotros",
   standalone: true,
-  imports: [CommonModule,RouterModule],
-  templateUrl: './nosotros.component.html',
-  styleUrl: './nosotros.component.css'
+  imports: [CommonModule],
+  templateUrl: "./nosotros.component.html",
+  styleUrls: ["./nosotros.component.css"],
 })
 export default class NosotrosComponent {
-
+  // Datos del equipo
+  teamMembers = [
+    {
+      name: "Fabio Yela",
+      position: "Ingeniero en Sistemas",
+      image: "/assets/Images/Fabio.jpg",
+    },
+    
+  ]
 }
