@@ -2,6 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+interface images {
+  src: string;
+  alt: string;
+}
 @Component({
   selector: 'app-inicio',
   standalone: true,
@@ -10,35 +14,28 @@ import { RouterModule } from '@angular/router';
   styleUrl: './inicio.component.css'
 })
 export default class InicioComponent {
-  images = [
+  images: images[] = [
     {
-      src: 'https://img.freepik.com/foto-gratis/tecnologia-equipamiento-laboratorio-azul-generado-ia_188544-19546.jpg',
+      src: './assets/Images/ImagesInicio/maq1.jpeg',
       alt: 'Imagen1'
     },
     {
-      src: 'https://images.pexels.com/photos/19871842/pexels-photo-19871842.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-19871842.jpg&fm=jpg',
+      src: './assets/Images/ImagesInicio/maq2.jpeg',
       alt: 'Imagen2'
     },
     {
-      src: 'https://www.stampa3dservizi.com/wp-content/uploads/2023/08/stampa-3d.webp',
+      src: './assets/Images/ImagesInicio/maq3.jpeg',
       alt: 'Imagen3'
     },
     {
-      src: 'https://e1.pxfuel.com/desktop-wallpaper/689/1023/desktop-wallpaper-3d-printing-start-3d-printer.jpg',
+      src: './assets/Images/ImagesInicio/maq4.jpeg',
       alt: 'Imagen4'
     },
     {
-      src: 'https://fbi.cults3d.com/uploads/blog/image/image/2173/visuel-impression-meilleurs-services-ligne-2021.jpg',
+      src: './assets/Images/ImagesInicio/maq5.jpeg',
       alt: 'Imagen5'
     },
-    {
-      src: 'https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-close-up-of-a-functional-3d-printer-in-action-image_13599549.png',
-      alt: 'Imagen6'
-    },
-     {
-      src: 'https://img.channelpartner.es/wp-content/uploads/2023/07/20113143/IMPRESION-3D-5.jpg.webp',
-      alt: 'Imagen7'
-    }
+    
   ];
 
   currentIndex = 0;

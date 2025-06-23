@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export default class ContactoComponent {
   phoneNumber = '+573128078694';
   whatsappMessage = 'Hola, quiero más información sobre sus servicios.';
-  addressUrl = 'https://g.co/kgs/dtHqGzq';
+  addressUrl = 'https://g.co/kgs/2NkVFcA';
 
   get whatsappUrl(): string {
     return `https://wa.me/${this.phoneNumber.replace('+', '')}?text=${encodeURIComponent(this.whatsappMessage)}`;
